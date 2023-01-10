@@ -28,7 +28,7 @@
   include_once("../model/Course.php");
 
   $cs_id = htmlspecialchars($_GET["cs_id"]);
-  echo $cs_id;
+  // echo $cs_id;
   $obj_name = new Course();
   $rs2 = $obj_name->getCourseById($cs_id);
   // echo $rs2['cs_id']
@@ -71,13 +71,14 @@
                               </nav> -->
             <!-- Post title-->
             <h1 class="fw-bolder mb-1">
-              <?php echo $rs2['cs_name'];
-
+              <?php
+              echo $rs2['cs_name'];
               ?>
             </h1>
             <!-- Post meta content-->
-            <div class="text-muted fst-italic mb-2"><i class="far fa-calendar-alt"></i> วันที่รับสมัคร 10 พ.ค. - 16 ก.ค.
-              2565</div>
+            <div class="text-muted fst-italic mb-2"><i class="far fa-calendar-alt"></i> วันที่รับสมัคร 
+            <?php echo $rs2['cs_date']?>
+          </div>
             <div class="sharethis-inline-share-buttons"></div>
 
 
@@ -88,7 +89,7 @@
                               <a class="badge bg-secondary text-decoration-none link-light" href="#!">Freebies</a> -->
           </header>
           <!-- Preview image figure-->
-          <figure class="mb-4"><img class="img-fluid rounded" src="../images/01.png" alt="..." /></figure>
+          <figure class="mb-4"><img class="img-fluid rounded" src="../<?=$rs2['cs_img'];?>" alt="..." /></figure>
           <!-- Post content-->
           <section class="mb-5 course-body">
             <!-- <h5 class="fw-bolder mb-4 mt-5 " id="list-item-1" ><i class="fas fa-book-reader"></i> คำอธิบายหลักสูตร หลักการและเหตุผล</h5>
@@ -168,7 +169,7 @@
 
             <h5 class="fw-bolder mb-4 mt-5" id="list-item-10"><i class="far fa-comments"></i> สอบถามเพิ่มเติม</h5>
             <ul class="list-inline course-content fs-6 contact-course">
-              <li class="list-inline-item"><i class="fas fa-phone-square-alt"></i> <a href="tel:...">06666666666</a>
+              <li class="list-inline-item"><i class="fas fa-phone-square-alt"></i> <a href="#">06666666666</a>
               </li>
             </ul>
 
@@ -209,7 +210,7 @@
             กำหนดการ</a>
           <!-- <a class="list-group-item list-group-item-action" href="#list-item-9">เข้าระบบคลังหน่วยกิต <i class="fas fa-graduation-cap text-success"></i></a> -->
           <div class="card-header bg-or-2 text-light">
-            <i class="fas fa-wallet "></i> ค่าลงทะเบียน 1,000 บาท/คน
+            <i class="fas fa-wallet "></i> ค่าลงทะเบียน <?php echo $rs2['cs_wallet']?>/คน
 
           </div>
           <div class="my-3 card-rela">
@@ -238,7 +239,7 @@
 
   <footer class="py-lg-5 bg-green ">
     <div class="container">
-      <p class="m-0 text-center text-white">Copyright &copy; Faculty of Humanities and Social Sciences Nakhon Pathom
+      <p class="m-0 text-center text-white">Copyright &copy;  Nakhon Pathom
         Rajabhat University 2021</p>
     </div>
   </footer>

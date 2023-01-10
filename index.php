@@ -31,6 +31,8 @@
                             href="http://sc.npru.ac.th/">คณะวิทยาศาสตร์และเทคโนโลยี</a></li>
                     <li class="nav-item"><a class="nav-link" href="https://forms.gle/Gd6Yzdffsb83qpZw7"
                             target="_blank">ยืนยันการชำระเงิน</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./course/addcourse.php"
+                            target="_blank">เพิ่มคอร์ส</a></li>
                 </ul>
 
             </div>
@@ -49,10 +51,10 @@
     <section class="py-2">
         <div class="container-fluid px-4 px-lg-5 mt-5">
             <div class="row gx-4 gx-lg-5 row-cols-1 row-cols-md-3 row-cols-xl-4 justify-content-center">
-               <?php
+                <?php
                 include "course_db.php";
                 ?>
-                
+
             </div>
         </div>
     </section>
